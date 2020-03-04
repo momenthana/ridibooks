@@ -1,6 +1,9 @@
 {
   "name": "svr",
   "version": "1.0.0",
+  "scripts": {
+    "serve": "node index"
+  },
   "main": "index.js",
   "repository": "https://github.com/momenthana/ridibooks.git",
   "author": "Hana <momenthana@kakao.com>",
