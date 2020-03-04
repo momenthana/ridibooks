@@ -8,6 +8,6 @@ app.use(async (ctx, next) => {
   console.log(new Date() - start + 'ms')
 })
 
-app.listen(3000, () => {
-  console.log('heurm server is listening to port 3000')
+app.listen(process.env.PORT, () => {
+  console.log(`heurm server is listening to port ${process.env.PORT}`)
 })

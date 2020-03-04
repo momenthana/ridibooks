@@ -2,10 +2,10 @@
   "name": "svr",
   "version": "1.0.0",
   "scripts": {
-    "serve": "node index",
-    "dev": "nodemon index"
+    "serve": "node -r dotenv/config src/index",
+    "dev": "nodemon -r dotenv/config src/index dotenv_config_path=.env.dev"
   },
-  "main": "index.js",
+  "main": "src/index.js",
   "repository": "https://github.com/momenthana/ridibooks.git",
   "author": "Hana <momenthana@kakao.com>",
   "license": "MIT",
