@@ -10,6 +10,7 @@
   "author": "Hana <momenthana@kakao.com>",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.19.2",
     "koa": "^2.11.0"
   },
   "devDependencies": {
