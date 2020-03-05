@@ -1,5 +1,6 @@
 const Koa = require('koa')
 const Router = require('koa-router')
+const cors = require('@koa/cors')
 const req = require('./request')
 
 const app = new Koa()
@@ -16,6 +17,8 @@ router.get('/stack', async (ctx, next) => {
 router.get('/forecast', async (ctx, next) => {
   ctx.body = await req.forecast()
 })
+
+app.use(cors())
 
 app.use(async (ctx, next) => {
   const start = new Date()
