@@ -4,6 +4,22 @@
     temporary
     app
   >
+    <template>
+      <v-list>
+        <v-list-item>
+          <v-list-item-content>
+            <v-sheet class="pa-5">
+              <v-switch
+                v-model="$store.state.notification"
+                inset
+                color="#1F8CE6"
+                label="알림 수신"
+              ></v-switch>
+            </v-sheet>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </template>
     <template v-slot:append>
       <v-list>
         <v-list-item>
