@@ -1,12 +1,14 @@
 <template>
   <v-app>
     <Bar/>
+    <Nav/>
     <Main/>
   </v-app>
 </template>
 
 <script>
 import Bar from './components/Bar'
+import Nav from './components/Nav'
 import Main from './components/Main'
 
 export default {
@@ -14,6 +16,7 @@ export default {
 
   components: {
     Bar,
+    Nav,
     Main
   },
 

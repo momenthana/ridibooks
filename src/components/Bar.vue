@@ -8,7 +8,7 @@
     fade-img-on-scroll
     scroll-target="#scrolling-techniques"
   >
-    <v-app-bar-nav-icon></v-app-bar-nav-icon>
+    <v-app-bar-nav-icon @click="$store.state.drawer = true"></v-app-bar-nav-icon>
 
     <v-toolbar-title>RIDIBOOKS</v-toolbar-title>
 
