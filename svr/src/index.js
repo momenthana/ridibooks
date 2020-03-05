@@ -1,12 +1,20 @@
-const req = require('./request')
 const Koa = require('koa')
 const Router = require('koa-router')
+const req = require('./request')
 
 const app = new Koa()
 const router = new Router()
 
-router.get('/', async (ctx, next) => {
-  ctx.body = await req()
+router.get('/live', async (ctx, next) => {
+  ctx.body = await req.live()
+})
+
+router.get('/stack', async (ctx, next) => {
+  ctx.body = await req.stack()
+})
+
+router.get('/forecast', async (ctx, next) => {
+  ctx.body = await req.forecast()
 })
 
 app.use(async (ctx, next) => {
@@ -18,5 +26,5 @@ app.use(async (ctx, next) => {
 app.use(router.routes()).use(router.allowedMethods())
 
 app.listen(process.env.PORT, () => {
-  console.log(`heurm server is listening to port ${process.env.PORT}`)
+  console.log(`http://localhost:${process.env.PORT}`)
 })
