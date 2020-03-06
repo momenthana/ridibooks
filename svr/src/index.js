@@ -1,33 +1,12 @@
-const Koa = require('koa')
-const Router = require('koa-router')
-const cors = require('@koa/cors')
-const req = require('./request')
+const koa = require('./koa')
+const slack = require('./slack')
 
-const app = new Koa()
-const router = new Router()
+if (process.env.SERVICE_KEY) {
+  if (process.env.PORT) {
+    koa()
+  }
 
-router.get('/live', async (ctx, next) => {
-  ctx.body = await req.live()
-})
-
-router.get('/stack', async (ctx, next) => {
-  ctx.body = await req.stack()
-})
-
-router.get('/forecast', async (ctx, next) => {
-  ctx.body = await req.forecast()
-})
-
-app.use(cors())
-
-app.use(async (ctx, next) => {
-  const start = new Date()
-  await next()
-  console.log(new Date() - start + 'ms')
-})
-
-app.use(router.routes()).use(router.allowedMethods())
-
-app.listen(process.env.PORT, () => {
-  console.log(`http://localhost:${process.env.PORT}`)
-})
+  if (process.env.SLACK_TOKEN) {
+    slack()
+  }
+}
