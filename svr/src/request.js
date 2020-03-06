@@ -24,7 +24,7 @@ const request = {
     if (data.live && data.live[0].baseTime === time) {
       return data.live
     }
-    await axios.get(`http://apis.data.go.kr/1360000/VilageFcstInfoService/getUltraSrtNcst?serviceKey=${process.env.KEY}&dataType=JSON&base_date=${date}&base_time=${time}&nx=61&ny=125`)
+    await axios.get(`http://apis.data.go.kr/1360000/VilageFcstInfoService/getUltraSrtNcst?serviceKey=${process.env.SERVICE_KEY}&dataType=JSON&base_date=${date}&base_time=${time}&nx=61&ny=125`)
       .then(function (res) {
         info = res.data.response.body.items.item
       })

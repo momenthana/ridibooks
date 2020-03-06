@@ -28,6 +28,6 @@ app.use(async (ctx, next) => {
 
 app.use(router.routes()).use(router.allowedMethods())
 
-app.listen(process.env.PORT || 80, () => {
-  console.log(`http://localhost:${process.env.PORT || 80}`)
+app.listen(process.env.PORT, () => {
+  console.log(`http://localhost:${process.env.PORT}`)
 })
