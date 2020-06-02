@@ -1,10 +1,5 @@
 <template>
   <v-content>
-    <v-sheet
-      id="scrolling-techniques"
-      class="overflow-y-auto"
-      max-height="100vh"
-    >
     <v-container>
       <v-card
         class="mx-auto"
@@ -61,7 +56,6 @@
         </v-list>
       </v-card>
     </v-container>
-    </v-sheet>
   </v-content>
 </template>
 

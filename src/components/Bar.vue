@@ -3,10 +3,6 @@
     app
     color="#1F8CE6"
     dark
-    shrink-on-scroll
-    prominent
-    fade-img-on-scroll
-    scroll-target="#scrolling-techniques"
   >
     <v-app-bar-nav-icon @click="$store.state.drawer = true"></v-app-bar-nav-icon>
 
@@ -17,7 +13,7 @@
         align-with-title
         color="white"
       >
-        <v-tab>EVENT</v-tab>
+        <v-tab>눈비오는날 포인트</v-tab>
       </v-tabs>
     </template>
   </v-app-bar>
