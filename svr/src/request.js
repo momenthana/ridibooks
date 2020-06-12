@@ -17,14 +17,14 @@ const request = {
   live: async () => {
     const data = load()
     let info
-    let date = new Date()
+    const date = new Date()
     date.setMinutes(date.getMinutes() - 40)
-    const time = `${('0' + date.getHours()).slice(-2)}00`
-    date = `${date.getFullYear()}${('0' + (date.getMonth() + 1)).slice(-2)}${('0' + date.getDate()).slice(-2)}`
-    if (data.live && data.live[0].baseTime === time) {
+    const baseDate = `${date.getFullYear()}${('0' + (date.getMonth() + 1)).slice(-2)}${('0' + date.getDate()).slice(-2)}`
+    const baseTime = `${('0' + date.getHours()).slice(-2)}00`
+    if (data.live && data.live[0].baseTime === baseTime && data.live[0].baseDate === baseDate) {
       return data.live
     }
-    await axios.get(`http://apis.data.go.kr/1360000/VilageFcstInfoService/getUltraSrtNcst?serviceKey=${process.env.SERVICE_KEY}&dataType=JSON&base_date=${date}&base_time=${time}&nx=61&ny=125`)
+    await axios.get(`http://apis.data.go.kr/1360000/VilageFcstInfoService/getUltraSrtNcst?serviceKey=${process.env.SERVICE_KEY}&dataType=JSON&base_date=${baseDate}&base_time=${baseTime}&nx=61&ny=125`)
       .then(function (res) {
         info = res.data.response.body.items.item
       })
