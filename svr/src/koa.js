@@ -24,7 +24,7 @@ const koajs = () => {
   koa.use(async (ctx, next) => {
     const start = new Date()
     await next()
-    console.log(new Date() - start + 'ms')
+    console.log(ctx.request.url, new Date() - start + 'ms')
   })
 
   koa.use(router.routes()).use(router.allowedMethods())
