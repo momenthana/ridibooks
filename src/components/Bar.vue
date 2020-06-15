@@ -3,6 +3,8 @@
     app
     color="#1F8CE6"
     dark
+    prominent
+    style="-webkit-app-region: drag"
   >
     <v-app-bar-nav-icon @click="$store.state.drawer = true"></v-app-bar-nav-icon>
 
