@@ -1,8 +1,9 @@
 <template>
   <v-app>
-    <Bar/>
-    <Nav/>
-    <Main/>
+    <Bar />
+    <Nav />
+    <About v-if="$store.state.tab" />
+    <Main v-else />
   </v-app>
 </template>
 
@@ -10,6 +11,7 @@
 import Bar from './components/Bar'
 import Nav from './components/Nav'
 import Main from './components/Main'
+import About from './components/About'
 
 export default {
   name: 'App',
@@ -17,7 +19,8 @@ export default {
   components: {
     Bar,
     Nav,
-    Main
+    Main,
+    About
   },
 
   mounted () {

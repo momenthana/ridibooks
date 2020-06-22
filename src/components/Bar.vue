@@ -14,8 +14,10 @@
       <v-tabs
         align-with-title
         color="white"
+        v-model="$store.state.tab"
       >
         <v-tab>눈비오는날 포인트</v-tab>
+        <v-tab>받는 방법</v-tab>
       </v-tabs>
     </template>
   </v-app-bar>
